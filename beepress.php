@@ -192,9 +192,11 @@ function beepress_for_wx_insert_by_url($urls) {
 			continue;
 		}
 		// 检查标题是否重复，若重复则跳过
+                /*
 		if ($id = post_exists($title) && !$debug) {
 			continue;
 		}
+                */
 		// 处理图片及视频资源
 		$imageDoms = $dom->find('img');
 		$videoDoms = $dom->find('.video_iframe');
@@ -278,6 +280,7 @@ function beepress_for_wx_insert_by_url($urls) {
 		}
 		// 下载图片到本地
 		$content = beepress_downloadImage($dom);
+                //error_log($content);
 
 		//保留来源
 		if ($keepSource) {
@@ -390,8 +393,11 @@ function beepress_downloadImage($dom) {
         */
 	$content = $dom->find('#js_content', 0)->innertext;
 	//$content = preg_replace('/data\-([a-zA-Z0-9])+\=\"[^\"]*\"/', '', $content);
-        //$content = preg_replace('(http:\/\/read\.html5\.qq\.com)([^\"])*imageUrl=', '', $content);
-	//$content = preg_replace('/src=\"(http:\/\/read\.html5\.qq\.com)([^\"])*\"/', '', $content);
+        //error_log($content);
+        error_log("--------------");
+        //$content = preg_replace('(http:\/\/read\.html5\.qq\.com.*imageUrl=)', '', $content, 5);
+       // error_log($content);
+	$content = preg_replace('/(http:\/\/read\.html5\.qq\.com)([^\"])*imageUrl=/', '', $content);
 	return $content;
 //	@wp_update_post(array(
 //		'ID' => $postId,
