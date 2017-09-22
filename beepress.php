@@ -317,7 +317,7 @@ function beepress_for_wx_insert_by_url($urls) {
 			'post_title'    => $title,
 			'post_content'  => $content,
 			'post_status'   => $postStatus,
-			'post_date'     => $postDate,
+			//'post_date'     => $postDate,
 			'post_modified' => $postDate,
 			'post_author'   => $userId,
 			'post_category' => $postCate,

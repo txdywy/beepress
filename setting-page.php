@@ -159,11 +159,13 @@ wp_enqueue_style('bootstrap-style');
 								</div>
 								<div class="panel-body">
 									<form method="post" enctype="multipart/form-data">
+                                                                                <button type="submit" class="btn btn-primary">批量确定</button>
 										<input type="hidden" name="media" value="wx">
 										<div class="form-group">
 											<label for="formGroupExampleInput">从指定URL中导入(默认)</label>
 											<textarea class="form-control" name="post_urls" rows="10" placeholder="每行一条文章地址"></textarea>
 										</div>
+                                                                                <button type="submit" class="btn btn-primary">批量确定</button>
 										<div class="form-group">
 											<label for="formGroupExampleInput">从文件导入(文本形式，每行一条文章地址)</label>
 											<input type="file" class="form-control" name="post_file">
@@ -178,8 +180,8 @@ wp_enqueue_style('bootstrap-style');
 										<div class="form-group">
 											<label for="formGroupExampleInput2">发布时间</label>
 											<select class="custom-select" name="change_post_time">
-												<option value="false" selected>原文时间</option>
-												<option value="true">当前时间</option>
+												<option value="false">原文时间</option>
+												<option value="true" selected>当前时间</option>
 											</select>
 										</div>
 										<div class="form-group">
@@ -224,8 +226,8 @@ wp_enqueue_style('bootstrap-style');
 										<div class="form-group">
 											<label for="formGroupExampleInput2">保留文章来源</label>
 											<select class="custom-select" name="keep_source">
-												<option value="keep" selected>保留</option>
-												<option value="remove">移除</option>
+												<option value="keep">保留</option>
+												<option value="remove" selected>移除</option>
 											</select>
 										</div>
 										<div class="form-group">
